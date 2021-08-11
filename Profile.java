@@ -1,3 +1,10 @@
+/**
+ * Storage Unit for individual profiles (usernames and points)
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
 public class Profile {
     private String username;
     private int points;

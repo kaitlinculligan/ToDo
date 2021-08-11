@@ -1,3 +1,10 @@
+/**
+ * Algorithm that determines the combined value of a task given its category and how soon it is due
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
 public class PointsAlg {
     private int importWeight = 1.5;
     private int groupWeight = 2.5;

@@ -1,3 +1,10 @@
+/**
+ * Class is the storage unit for the different types of tasks
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
 public class Category {
     private String catName;
     private String[] keyword;

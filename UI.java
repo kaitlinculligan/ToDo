@@ -1,3 +1,11 @@
+/**
+ * Class holds all UI for whole program
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
+
 public class UI {
     
     private Profile profile;

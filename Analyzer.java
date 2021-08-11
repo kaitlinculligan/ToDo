@@ -1,3 +1,10 @@
+/**
+ * Class is generic placeholder for analyzing tasks
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
 public class Analyzer {
     
     public Analyzer(){}

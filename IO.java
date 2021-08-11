@@ -1,3 +1,11 @@
+/**
+ * Class is responsible for IO for whole program
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
+
 public class IO {
     private Profile profile;
 
@@ -25,5 +33,5 @@ public class IO {
     }
 
     public void output(){}
-    
+    //This class will likely be deleted in further iterations
 }

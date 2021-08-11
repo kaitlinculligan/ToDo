@@ -1,3 +1,10 @@
+/**
+ * Class parses through input tasks, then determines the category task falls into, returns determine value of category
+ * 
+ * @version 1.0
+ * @since 1.0
+ * @author Kaitlin Culligan
+ */
 import java.util.ArrayList;
 
 public class ItemAnalyzer{
