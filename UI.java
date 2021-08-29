@@ -12,17 +12,9 @@
 public class UI {
     
     private Profile profile;
+    private IO io = new IO();
 
-
-    public void saveProfile(){
-
-    }
-
-    public void loadProfile(String username){
-
-    }
-
-    public Profile getLoadedProfile(){
+    private Profile getLoadedProfile(){
         return this.profile;
     }
 
@@ -33,6 +25,7 @@ public class UI {
              frame.setVisible(true);
              frame.setResizable(true);
              frame.setTitle("ToDo");
+
          });
     }
 }

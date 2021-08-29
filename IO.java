@@ -6,32 +6,62 @@
  * @author Kaitlin Culligan
  */
 
-public class IO {
-    private Profile profile;
+import java.io.*;
 
+public class IO {
+
+/**
+ * Constructor for class
+ */
     public IO(){}
 
-    public void saveProfile(){
-
-    }
-
-    public void loadProfile(String username){
-
-    }
-
-    public Profile getLoadedProfile(){
-        return this.profile;
-    }
-    
-    public void input(String inputType, String inputValue){
-        if(inputType.equals("load profile")){
-            this.loadProfile(inputValue);
+/**
+ * Saves profile's points in a txt file names after the profile's username
+ * 
+ * @param profile profile to save
+ */
+    public void saveProfile(Profile profile){
+        File f = new File("res/" + profile.username + ".txt");
+        if(!f.exists()){
+            try{
+                f.createNewFile();
+                FileWriter fw = new FileWriter(f);
+                fw.write(String.toString(profile.getPoints()));
+                fw.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
         }
-        else if(inputType.equals("save profile")){
-            this.saveProfile();
+        else{
+            FileWriter fw = new FileWriter(f);
+            fw.write(String.toString(profile.getPoints()));
+            fw.close();
         }
     }
 
-    public void output(){}
-    //This class will likely be deleted in further iterations
+/**
+* loads a profile with a given username, returns a profile with data
+* @param username username of profile to load
+* @return Profile object containing relavent point data
+*/
+    public Profile loadProfile(String username){
+        File f = new File("res/" + username + ".txt");
+        if(f.exists()){
+            try{
+                FileReader fr = new FileReader(f);
+                String pointString = fr.read();
+                fr.close();
+                int points = Integer.parseInt(pointString);
+                Profile profile = new Profile(username, points);
+                return profile;
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+        else{
+            Profile error = new Profile("error", -1);
+            return error;
+        }
+    }
+
 }
