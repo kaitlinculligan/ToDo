@@ -15,8 +15,8 @@ public class PointsAlg {
     public PointsAlg(){}
 
     public int calculatePoints(String importance, String item, String date){
-        int itemValue = item.findValue(item);
-        int dateValue = date.findValue(date);
+        int itemValue = this.item.findValue(item);
+        int dateValue = this.date.findValue(date);
         int importanceValue = this.findValue(importance);
 
         return this.addition(itemValue, dateValue, importanceValue);
