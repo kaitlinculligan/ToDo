@@ -25,7 +25,12 @@ public class UI {
              frame.setVisible(true);
              frame.setResizable(true);
              frame.setTitle("ToDo");
+             var usernameField = new UsernameField();
+             var usernameButton = new UsernameButton();
 
+             if(!usernameField.getText().equals("Enter Profile Name") && usernameButton.isEnabled()){
+                 //change to the task list page as designed
+             }
          });
     }
 }
@@ -36,5 +41,20 @@ class SimpleFrame extends JFrame{
 
     public SimpleFrame(){
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    }
+}
+
+class UsernameField extends JTextField{
+
+
+    public UsernameField(){
+        super("Enter Profile Name");
+    }
+}
+
+class UsernameButton extends JButton{
+
+    public UsernameButton(){
+        super("Continue");
     }
 }
