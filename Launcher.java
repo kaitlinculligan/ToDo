@@ -6,6 +6,8 @@
  * @author Kaitlin Culligan
  */
 import UIElements.*;
+import java.awt.*;
+import javax.swing.*;
 
 public class Launcher {
 
@@ -19,16 +21,10 @@ public class Launcher {
     public static void main(String[] args){
         EventQueue.invokeLater(() -> {
             var frame = new SimpleFrame();
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
-            frame.setResizable(true);
-            frame.setTitle("ToDo");
-            var usernameField = new UsernameField();
-            var usernameButton = new UsernameButton();
-
-            if(!usernameField.getText().equals("Enter Profile Name") && usernameButton.isEnabled()){
-                //change to the task list page as designed
-            }
+            frame.initialize();
+            frame.pageChange("username");
+            
+            //need to write the rest of the programs functionality here
         });
    }
 }
