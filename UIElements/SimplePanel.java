@@ -15,10 +15,17 @@ public class SimplePanel extends JPanel{
     private UsernameButton usernameButton;
     private UsernameField usernameField;
     
+    /**
+     * Constructor
+     */
     public SimplePanel(){
         super();
     }
 
+    /**
+     * Initializes panel according to what page the program is on
+     * @param panelType the page the program is on
+     */
     public void initialize(String panelType){
         //should probably move following 2 lines inside the panel type conditionals
         setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
@@ -36,6 +43,9 @@ public class SimplePanel extends JPanel{
         setVisible(true);
     }
 
+    /**
+     * Setups up panel if the current page is the user selection page
+     */
     private void usernameSetup(){
         usernameButton = new UsernameButton();
         usernameField = new UsernameField();
@@ -43,14 +53,23 @@ public class SimplePanel extends JPanel{
         add(usernameField);
     }
 
+    /**
+     * Setups up panel if the current page is the task list page
+     */
     private void listSetup(){
 
     }
 
+    /**
+     * Setups up panel if the current page is the point redemption page
+     */
     private void redeemSetup(){
 
     }
 
+    /**
+     * Setups up panel if the current page is the add task page
+     */
     private void addSetup(){
         
     }

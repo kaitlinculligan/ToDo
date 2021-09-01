@@ -13,10 +13,16 @@ import javax.swing.*;
 
 public class UsernameButton extends JButton{
 
+    /**
+     * Constructor
+     */
     public UsernameButton(){
         super("Continue");
     }
 
+    /**
+     * Initializes button according to needed parameters
+     */
     public void initialize(){
 
     }

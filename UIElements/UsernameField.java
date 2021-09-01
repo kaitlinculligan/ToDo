@@ -14,10 +14,16 @@ import javax.swing.*;
 public class UsernameField extends JTextField{
 
 
+    /**
+     * Constructor
+     */
     public UsernameField(){
         super("Enter Profile Name");
     }
 
+    /**
+     * Initializes the textfield according to needed parameters
+     */
     public void initialize(){
 
     }

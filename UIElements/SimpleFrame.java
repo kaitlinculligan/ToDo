@@ -15,10 +15,16 @@ public class SimpleFrame extends JFrame{
     private static final int DEFAULT_HEIGHT = 200;
     private SimplePanel panel;
 
+    /**
+     * Constructor
+     */
     public SimpleFrame(){
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
 
+    /**
+     * Initializes frame according to the needed parameters
+     */
     public void initialize(){
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(true);
