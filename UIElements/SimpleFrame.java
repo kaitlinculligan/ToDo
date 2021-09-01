@@ -13,6 +13,7 @@
 public class SimpleFrame extends JFrame{
     private static final int DEFAULT_WIDTH = 300;
     private static final int DEFAULT_HEIGHT = 200;
+    private SimplePanel panel;
 
     public SimpleFrame(){
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
@@ -24,5 +25,22 @@ public class SimpleFrame extends JFrame{
         setTitle("ToDo");
 
         setVisible(true);
+    }
+
+    /**
+     * handles changing the used panel when the page changes
+     * @param page the page being changed to
+     */
+    public void pageChange(String page){
+        if(panel == null){
+         panel = new SimplePanel();
+         panel.initialize(page);
+         add(panel);
+        }else{
+            remove(panel);
+            panel = new SimplePanel();
+            panel.initialize(page);
+            add(panel);
+        }
     }
 }
