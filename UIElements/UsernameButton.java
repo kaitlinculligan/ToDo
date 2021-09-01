@@ -18,6 +18,6 @@ public class UsernameButton extends JButton{
     }
 
     public void initialize(){
-        
+
     }
 }
