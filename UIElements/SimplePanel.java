@@ -85,4 +85,12 @@ public class SimplePanel extends JPanel{
     public UsernameLabel getUsernameLabel(){
         return this.usernameLabel;
     }
+
+    /**
+     * Returns usernameField for the purposes of loading the given profie
+     * @return usernameField
+     */
+    public UsernameField getUsernameField(){
+        return this.usernameField;
+    }
 }
