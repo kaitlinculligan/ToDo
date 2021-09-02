@@ -9,11 +9,13 @@
 package UIElements;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class SimplePanel extends JPanel{
     private UsernameButton usernameButton;
     private UsernameField usernameField;
+    private UsernameLabel usernameLabel;
     
     /**
      * Constructor
@@ -28,9 +30,8 @@ public class SimplePanel extends JPanel{
      */
     public void initialize(String panelType){
         //should probably move following 2 lines inside the panel type conditionals
-        setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
-        setBackground(Color.GREEN);
         if(panelType.equals("username")){
+            setLayout(new BorderLayout());
             usernameSetup();
         }else if(panelType.equals("list")){
             listSetup();
@@ -47,10 +48,13 @@ public class SimplePanel extends JPanel{
      * Setups up panel if the current page is the user selection page
      */
     private void usernameSetup(){
-        usernameButton = new UsernameButton();
         usernameField = new UsernameField();
-        add(usernameButton);
-        add(usernameField);
+        usernameLabel = new UsernameLabel();
+        usernameButton = new UsernameButton(usernameField, usernameLabel);
+
+        add(usernameButton, "SOUTH");
+        add(usernameField, "CENTER");
+        add(usernameLabel, "NORTH");
     }
 
     /**
@@ -72,5 +76,13 @@ public class SimplePanel extends JPanel{
      */
     private void addSetup(){
         
+    }
+
+    /**
+     * Returns usernameLabel for the purposes of confirming success loading page
+     * @return usernameLabel
+     */
+    public UsernameLabel getUsernameLabel(){
+        return this.usernameLabel;
     }
 }

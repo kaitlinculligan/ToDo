@@ -9,15 +9,21 @@
 package UIElements;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class UsernameButton extends JButton{
 
+    private UsernameField usernameField;
+    private UsernameLabel usernameLabel;
+
     /**
      * Constructor
      */
-    public UsernameButton(){
+    public UsernameButton(UsernameField usernameField, UsernameLabel usernameLabel){
         super("Continue");
+        this.usernameField = usernameField;
+        this.usernameLabel = usernameLabel;
     }
 
     /**
@@ -25,5 +31,23 @@ public class UsernameButton extends JButton{
      */
     public void initialize(){
 
+
+        addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if(!usernameField.getText().equals("anObject")){
+                    usernameLabel.setLabel("Loading profile");
+                }
+            }
+        });
+    }
+
+    /**
+     * getter for usernameField
+     * @return usernameField
+     */
+    public UsernameField getUsernameField(){
+        return this.usernameField;
     }
 }

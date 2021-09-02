@@ -49,4 +49,12 @@ public class SimpleFrame extends JFrame{
             add(panel);
         }
     }
+
+    /**
+     * Returns the panel for the purposes of checking GUI/program status
+     * @return panel
+     */
+    public SimplePanel getPanel(){
+        return panel;
+    }
 }
