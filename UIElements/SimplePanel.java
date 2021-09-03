@@ -13,6 +13,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class SimplePanel extends JPanel{
+
+    private SimpleMenuBar simpleMenuBar;
+
     private UsernameButton usernameButton;
     private UsernameField usernameField;
     private UsernameLabel usernameLabel;
@@ -39,6 +42,11 @@ public class SimplePanel extends JPanel{
             redeemSetup();
         }else if(panelType.equals("add")){
             addSetup();
+        }
+
+        if(!panelType.equals("username")){
+            simpleMenuBar = new SimpleMenuBar();
+            add(simpleMenuBar);
         }
 
         setVisible(true);
