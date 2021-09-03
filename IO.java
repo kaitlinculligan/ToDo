@@ -10,10 +10,14 @@ import java.io.*;
 
 public class IO {
 
+    private Profile profile;
+
 /**
  * Constructor for class
  */
-    public IO(){}
+    public IO(){
+        profile = new Profile("placeholder");
+    }
 
 /**
  * Saves profile's points in a txt file names after the profile's username
@@ -21,7 +25,7 @@ public class IO {
  * @param profile profile to save
  */
     public void saveProfile(Profile profile){
-        File f = new File("res/" + profile.username + ".txt");
+        File f = new File("res/" + profile.getUsername() + ".txt");
         if(!f.exists()){
             try{
                 f.createNewFile();
@@ -46,13 +50,24 @@ public class IO {
 */
     public Profile loadProfile(String username){
         File f = new File("res/" + username + ".txt");
+        String line;
+        int lineNum = 0;
+        String task = null;
         if(f.exists()){
-            try{
-                FileReader fr = new FileReader(f);
-                String pointString = fr.read();
-                fr.close();
-                int points = Integer.parseInt(pointString);
-                Profile profile = new Profile(username, points);
+            try(BufferedReader br = new BufferedReader(new FileReader(f));){
+                while((line = br.readLine()) != null){
+                    if(lineNum == 0){
+                        int points = Integer.parseInt(line);
+                        this.profile = new Profile(username, points);
+                    }
+                    else if(lineNum%2 == 0){
+                        this.profile.addTask(task, Integer.parseInt(line));
+                    }
+                    else{
+                        task = line;
+                    }
+                    lineNum++;
+                }
                 return profile;
             }catch(IOException e){
                 e.printStackTrace();
@@ -62,6 +77,7 @@ public class IO {
             Profile error = new Profile("error", -1);
             return error;
         }
+        return null;
     }
 
 }
