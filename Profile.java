@@ -37,7 +37,15 @@ public class Profile {
     }
 
     public void addTask(String task, int points){
-
+        this.tasks.add(task);
+        this.availablePoints.add(points);
     }
     
+    public ArrayList<String> getTaskArray(){
+        return this.tasks;
+    }
+
+    public ArrayList<Integer> getAvailablePointsArray(){
+        return this.availablePoints;
+    }
 }

@@ -26,20 +26,31 @@ public class IO {
  */
     public void saveProfile(Profile profile){
         File f = new File("res/" + profile.getUsername() + ".txt");
+        int i = 0;
         if(!f.exists()){
-            try{
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter(f));){
                 f.createNewFile();
-                FileWriter fw = new FileWriter(f);
-                fw.write(String.toString(profile.getPoints()));
-                fw.close();
+                bw.write(profile.getPoints()+"\n");
+                while(profile.getTaskArray().get(i)!=null){
+                    bw.write(profile.getTaskArray().get(i));
+                    bw.write(profile.getAvailablePointsArray().get(i));
+                    i++;
+                }
             }catch(IOException e){
                 e.printStackTrace();
             }
         }
         else{
-            FileWriter fw = new FileWriter(f);
-            fw.write(String.toString(profile.getPoints()));
-            fw.close();
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter("res/" + profile.getUsername() + ".txt"));){
+                bw.write(profile.getPoints()+"\n");
+                while(profile.getTaskArray().get(i)!=null){
+                    bw.write(profile.getTaskArray().get(i));
+                    bw.write(profile.getAvailablePointsArray().get(i));
+                    i++;
+                }
+            }catch(IOException e){
+                e.printStackTrace();
+            }
         }
     }
 
