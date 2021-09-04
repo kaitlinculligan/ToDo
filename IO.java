@@ -20,7 +20,7 @@ public class IO {
     }
 
 /**
- * Saves profile's points in a txt file names after the profile's username
+ * Saves profile's points and tasks in a txt file names after the profile's username
  * 
  * @param profile profile to save
  */
