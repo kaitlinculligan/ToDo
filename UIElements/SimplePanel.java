@@ -12,6 +12,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.Add;
+
 public class SimplePanel extends JPanel{
 
     private SimpleMenuBar simpleMenuBar;
@@ -19,6 +21,15 @@ public class SimplePanel extends JPanel{
     private UsernameButton usernameButton;
     private UsernameField usernameField;
     private UsernameLabel usernameLabel;
+
+    private AddExitButton addExitButton;
+    private AddContinueButton addContinueButton;
+    private AddLabel addItemLabel;
+    private AddLabel addDateLabel;
+    private AddLabel addImportanceLabel;
+    private AddField addItemField;
+    private AddField addDateField;
+    private AddSlider addSlider;
     
     /**
      * Constructor
@@ -37,10 +48,13 @@ public class SimplePanel extends JPanel{
             setLayout(new BorderLayout());
             usernameSetup();
         }else if(panelType.equals("list")){
+            setLayout(new GridLayout());
             listSetup();
         }else if(panelType.equals("redeem")){
+            setLayout(new GridLayout());
             redeemSetup();
         }else if(panelType.equals("add")){
+            setLayout(new BorderLayout());
             addSetup();
         }
 
@@ -83,7 +97,16 @@ public class SimplePanel extends JPanel{
      * Setups up panel if the current page is the add task page
      */
     private void addSetup(){
-        
+        addExitButton = new AddExitButton();
+        addContinueButton = new AddContinueButton();
+        addItemLabel = new AddLabel();
+        addDateLabel = new AddLabel();
+        addImportanceLabel = new AddLabel();
+        addItemField = new AddField();
+        addDateField = new AddField();
+        addSlider = new AddSlider();
+
+        //add components to panel
     }
 
     /**
@@ -100,5 +123,69 @@ public class SimplePanel extends JPanel{
      */
     public UsernameField getUsernameField(){
         return this.usernameField;
+    }
+
+    /**
+     * Getter for addExitButton
+     * @return addExitButton
+     */
+    public AddExitButton getAddExitButton(){
+        return this.addExitButton;
+    }
+
+    /**
+     * Getter for addContinueButton
+     * @return addContinueButton
+     */
+    public AddContinueButton getAddContinueButton(){
+        return this.addContinueButton;
+    }
+
+    /**
+     * Getter for addItemLabel
+     * @return addItemLabel
+     */
+    public AddLabel getAddItemLabel(){
+        return this.addItemLabel;
+    }
+
+    /**
+     * Getter for addDateLabel
+     * @return addDateLabel
+     */
+    public AddLabel getAddDateLabel(){
+        return this.addDateLabel;
+    }
+
+    /**
+     * Getter for addImportanceLabel
+     * @return addImportanceLabel
+     */
+    public AddLabel getAddImportanceLabel(){
+        return this.addImportanceLabel;
+    }
+
+    /**
+     * Getter for addItemField
+     * @return addItemField
+     */
+    public AddField getAddItemField(){
+        return this.addItemField;
+    }
+
+    /**
+     * Getter for addDateField
+     * @return addDateField
+     */
+    public AddField getAddDateField(){
+        return this.addDateField;
+    }
+
+    /**
+     * Getter for addSlider
+     * @return addSlider
+     */
+    public AddSlider getAddSlider(){
+        return this.addSlider;
     }
 }
