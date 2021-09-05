@@ -50,11 +50,19 @@ public class Profile {
     }
 
     /**
-     * Setter for points
+     * Adds points to total
      * @param toAdd points to add
      */
-    public void setPoints(int toAdd){
+    public void addPoints(int toAdd){
         this.points += toAdd;
+    }
+
+    /**
+     * Subtract points to total
+     * @param toSubtract points to subtract
+     */
+    public void subtractPoints(int toSubtract){
+        this.points -= toSubtract;
     }
 
     /**
@@ -89,7 +97,7 @@ public class Profile {
      */
     public void completeTask(String task){
         int index = this.tasks.indexOf(task);
-        setPoints(this.getAvailablePointsArray().get(index));
+        addPoints(this.getAvailablePointsArray().get(index));
         this.tasks.remove(index);
         this.availablePoints.remove(index);
     }
