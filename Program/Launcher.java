@@ -5,6 +5,9 @@
  * @since 1.0
  * @author Kaitlin Culligan
  */
+
+package Program;
+
 import UIElements.*;
 import java.awt.*;
 import javax.swing.*;
