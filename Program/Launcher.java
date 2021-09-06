@@ -30,6 +30,7 @@ public class Launcher {
             //need to write the rest of the programs functionality here
             if(frame.getPanel().getUsernameLabel().getLabel().equals("Loading profile")){
                 profile = io.loadProfile(frame.getPanel().getUsernameField().getText());
+                frame.setPanelProfile(profile);
                 frame.pageChange("list");
             }
         });

@@ -51,7 +51,7 @@ public class SimplePanel extends JPanel{
             setLayout(new BorderLayout());
             usernameSetup();
         }else if(panelType.equals("list")){
-            setLayout(new GridLayout());
+            setLayout(new GridLayout(3, this.profile.getTaskArray().size()+1));
             listSetup();
         }else if(panelType.equals("redeem")){
             setLayout(new GridLayout());
@@ -86,7 +86,13 @@ public class SimplePanel extends JPanel{
      * Setups up panel if the current page is the task list page
      */
     private void listSetup(){
+        for(int i = 0; i < this.profile.getTaskArray().size(); i++){
+            add(new ListLabel(this.profile.getTaskArray().get(i)), 0, i);   
+            add(new  ListLabel(this.profile.getAvailablePointsArray().get(i).toString()), 1, i);
+            add(new ListCheckBox(), 2, i);
+        }
 
+        add(new ListButton(), 0, this.profile.getTaskArray().size());
     }
 
     /**
@@ -198,5 +204,13 @@ public class SimplePanel extends JPanel{
      */
     public AddSlider getAddSlider(){
         return this.addSlider;
+    }
+
+    /**
+     * Setter for profile
+     * @param profile Profile to set profile to
+     */
+    public void setProfile(Profile profile){
+        this.profile = profile;
     }
 }

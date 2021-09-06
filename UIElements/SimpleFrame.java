@@ -6,6 +6,9 @@
  * @author Kaitlin Culligan
  */
 
+package UIElements;
+
+ import Program.*;
  import java.awt.*;
  import javax.swing.*;
 
@@ -56,5 +59,11 @@ public class SimpleFrame extends JFrame{
      */
     public SimplePanel getPanel(){
         return panel;
+    }
+
+    public void setPanelProfile(Profile profile){
+        if(this.panel != null){
+            this.panel.setProfile(profile);
+        }
     }
 }
