@@ -15,4 +15,25 @@ import javax.swing.*;
 
 public class ListButton extends JButton{
     
+    /**
+     * Constructor
+     */
+    public ListButton(){
+        super("Add");
+    }
+
+    /**
+     * Initializes button according to needed parameters
+     */
+    public void initialize(){
+
+
+        addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+                
+            }
+        });
+    }
 }

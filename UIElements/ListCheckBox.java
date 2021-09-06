@@ -13,5 +13,24 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class ListCheckBox extends JCheckBox{
-    
+
+    public ListCheckBox(){
+        super();
+    } 
+
+    /**
+     * Initializes button according to needed parameters
+     */
+    public void initialize(){
+
+
+        addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e){
+                
+            }
+        });
+    }
+
 }
