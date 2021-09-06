@@ -8,6 +8,7 @@
 
 package UIElements;
 
+import Program.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -15,6 +16,8 @@ import javax.swing.*;
 import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.Add;
 
 public class SimplePanel extends JPanel{
+
+    private Profile profile;
 
     private SimpleMenuBar simpleMenuBar;
 
@@ -107,6 +110,14 @@ public class SimplePanel extends JPanel{
         addSlider = new AddSlider();
 
         //add components to panel
+        add(addItemLabel, "NORTH");
+        add(addItemField, "NORTH");
+        add(addDateLabel, "CENTER");
+        add(addDateField, "CENTER");
+        add(addImportanceLabel, "SOUTH");
+        add(addSlider, "SOUTH");
+        add(addExitButton, "WEST");
+        add(addContinueButton, "WEST");
     }
 
     /**
