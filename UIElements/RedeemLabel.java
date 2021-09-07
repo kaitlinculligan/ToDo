@@ -14,5 +14,11 @@ import javax.swing.*;
 
 
 public class RedeemLabel extends JLabel{
-    
+    public void setLabel(String label){
+        setLabel(label);
+    }
+
+    public String getLabel(){
+        return getLabel();
+    }
 }

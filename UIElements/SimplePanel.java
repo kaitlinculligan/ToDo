@@ -33,6 +33,9 @@ public class SimplePanel extends JPanel{
     private AddField addItemField;
     private AddField addDateField;
     private AddSlider addSlider;
+
+    private RedeemLabel redeemPointsLabelOne;
+    private RedeemLabel redeemPointsLabelTwo;
     
     /**
      * Constructor
@@ -54,7 +57,7 @@ public class SimplePanel extends JPanel{
             setLayout(new GridLayout(3, this.profile.getTaskArray().size()+1));
             listSetup();
         }else if(panelType.equals("redeem")){
-            setLayout(new GridLayout());
+            setLayout(new BorderLayout());
             redeemSetup();
         }else if(panelType.equals("add")){
             setLayout(new BorderLayout());
@@ -99,7 +102,14 @@ public class SimplePanel extends JPanel{
      * Setups up panel if the current page is the point redemption page
      */
     private void redeemSetup(){
+        redeemPointsLabelOne = new RedeemLabel();
+        redeemPointsLabelTwo = new RedeemLabel();
 
+        redeemPointsLabelOne.setLabel("Points:");
+        redeemPointsLabelTwo.setLabel(String.valueOf(this.profile.getPoints()));
+
+        add(redeemPointsLabelOne, "CENTER");
+        add(redeemPointsLabelTwo, "CENTER");
     }
 
     /**
