@@ -13,9 +13,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.Add;
 
 public class SimplePanel extends JPanel{
+
+    private SimpleFrame frame;
 
     private Profile profile;
 
@@ -40,8 +41,9 @@ public class SimplePanel extends JPanel{
     /**
      * Constructor
      */
-    public SimplePanel(){
+    public SimplePanel(SimpleFrame frame){
         super();
+        this.frame = frame;
     }
 
     /**
@@ -77,12 +79,12 @@ public class SimplePanel extends JPanel{
      */
     private void usernameSetup(){
         usernameField = new UsernameField();
-        usernameLabel = new UsernameLabel();
-        usernameButton = new UsernameButton(usernameField, usernameLabel);
+        usernameLabel = new UsernameLabel("Enter Username:");
+        usernameButton = new UsernameButton(usernameField, usernameLabel, frame);
 
-        add(usernameButton, "SOUTH");
-        add(usernameField, "CENTER");
-        add(usernameLabel, "NORTH");
+        add(usernameButton, BorderLayout.SOUTH);
+        add(usernameField, BorderLayout.CENTER);
+        add(usernameLabel, BorderLayout.NORTH);
     }
 
     /**
@@ -108,8 +110,8 @@ public class SimplePanel extends JPanel{
         redeemPointsLabelOne.setLabel("Points:");
         redeemPointsLabelTwo.setLabel(String.valueOf(this.profile.getPoints()));
 
-        add(redeemPointsLabelOne, "CENTER");
-        add(redeemPointsLabelTwo, "CENTER");
+        add(redeemPointsLabelOne, BorderLayout.CENTER);
+        add(redeemPointsLabelTwo, BorderLayout.CENTER);
     }
 
     /**
@@ -126,14 +128,14 @@ public class SimplePanel extends JPanel{
         addSlider = new AddSlider();
 
         //add components to panel
-        add(addItemLabel, "NORTH");
-        add(addItemField, "NORTH");
-        add(addDateLabel, "CENTER");
-        add(addDateField, "CENTER");
-        add(addImportanceLabel, "SOUTH");
-        add(addSlider, "SOUTH");
-        add(addExitButton, "WEST");
-        add(addContinueButton, "WEST");
+        add(addItemLabel, BorderLayout.NORTH);
+        add(addItemField, BorderLayout.NORTH);
+        add(addDateLabel, BorderLayout.CENTER);
+        add(addDateField, BorderLayout.CENTER);
+        add(addImportanceLabel, BorderLayout.SOUTH);
+        add(addSlider, BorderLayout.SOUTH);
+        add(addExitButton, BorderLayout.WEST);
+        add(addContinueButton, BorderLayout.WEST);
     }
 
     /**

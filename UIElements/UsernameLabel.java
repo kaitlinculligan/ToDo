@@ -13,13 +13,19 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class UsernameLabel extends JLabel{
-    
 
-    public void setLabel(String label){
-        setLabel(label);
+    private String label;
+
+    public UsernameLabel(String label){
+        super(label);
+        this.label = label;
     }
 
     public String getLabel(){
-        return getLabel();
+        return this.label;
+    }
+    
+    public void setLabel(String label){
+        this.label = label;
     }
 }

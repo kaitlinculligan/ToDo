@@ -13,6 +13,7 @@ package UIElements;
  import javax.swing.*;
 
 
+
 public class SimpleFrame extends JFrame{
     private static final int DEFAULT_WIDTH = 300;
     private static final int DEFAULT_HEIGHT = 200;
@@ -42,12 +43,12 @@ public class SimpleFrame extends JFrame{
      */
     public void pageChange(String page){
         if(panel == null){
-         panel = new SimplePanel();
+         panel = new SimplePanel(this);
          panel.initialize(page);
          add(panel);
         }else{
             remove(panel);
-            panel = new SimplePanel();
+            panel = new SimplePanel(this);
             panel.initialize(page);
             add(panel);
         }

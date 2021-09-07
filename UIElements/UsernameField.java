@@ -18,7 +18,7 @@ public class UsernameField extends JTextField{
      * Constructor
      */
     public UsernameField(){
-        super("Enter Profile Name");
+        super();
     }
 
     /**

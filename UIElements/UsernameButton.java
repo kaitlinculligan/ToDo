@@ -16,14 +16,16 @@ public class UsernameButton extends JButton{
 
     private UsernameField usernameField;
     private UsernameLabel usernameLabel;
+    private SimpleFrame frame;
 
     /**
      * Constructor
      */
-    public UsernameButton(UsernameField usernameField, UsernameLabel usernameLabel){
+    public UsernameButton(UsernameField usernameField, UsernameLabel usernameLabel, SimpleFrame f){
         super("Continue");
         this.usernameField = usernameField;
         this.usernameLabel = usernameLabel;
+        this.frame = f;
     }
 
     /**
@@ -36,8 +38,9 @@ public class UsernameButton extends JButton{
 
             @Override
             public void actionPerformed(ActionEvent e){
-                if(!usernameField.getText().equals("anObject")){
+                if(usernameField.getText() != null){
                     usernameLabel.setLabel("Loading profile");
+                    frame.pageChange("list");
                 }
             }
         });
